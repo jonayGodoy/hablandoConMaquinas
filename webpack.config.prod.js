@@ -149,6 +149,10 @@ export default {
             }
           }
         ]
+      },
+      {
+        test: /\.md$/,
+        use: 'raw-loader'
       }
     ]
   }
