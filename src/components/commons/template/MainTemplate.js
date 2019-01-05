@@ -11,7 +11,6 @@ import "./footer.css"
 
 import icon_github from "../../../assets/img/footer/github.svg";
 import icon_twitter from "../../../assets/img/footer/twitter.svg";
-import * as routesPath from "../../../pages/routePath";
 
 class MainTemplate extends React.Component {
     constructor(props, context) {
