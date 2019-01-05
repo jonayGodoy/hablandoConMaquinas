@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 
 import MenuNav from '../menuNav/MenuNav';
 import MenuMobile from '../menuMobile/MenuMobile';
@@ -12,6 +13,7 @@ import "./footer.css"
 
 import icon_github from "../../../assets/img/footer/github.svg";
 import icon_twitter from "../../../assets/img/footer/twitter.svg";
+import * as routesPath from "../../../pages/routePath";
 
 class MainTemplate extends React.Component {
     constructor(props, context) {
@@ -35,10 +37,10 @@ class MainTemplate extends React.Component {
                                 {config_blog.blogTitle}
                             </p>
                             <div className="icons-footer">
-                                <a href={config_blog.social_networks.twitter} target="_blank">
+                                <a href={config_blog.social_networks.twitter} target="_blank" rel="noopener noreferrer">
                                     <img className="icon-footer" src={icon_twitter} />
                                 </a>
-                                <a href={config_blog.social_networks.github} target="_blank">
+                                <a href={config_blog.social_networks.github} target="_blank" rel="noopener noreferrer">
                                     <img className="icon-footer" src={icon_github} />
                                 </a>
                             </div>
@@ -48,5 +50,4 @@ class MainTemplate extends React.Component {
         )
     }
 }
-
 export default MainTemplate;

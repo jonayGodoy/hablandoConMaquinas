@@ -1,7 +1,16 @@
+
+import React, {Component} from 'react';
+import MainTemplate from '../../components/commons/template/MainTemplate';
+
+export default class BlogHomePage extends Component {
+  render() {
+    return (<MainTemplate/>)
+  }
+}
+
+
+
 /*
-import React from "react"
-
-
 import get from "lodash/get"
 import BoxArticle from '../components/boxArticle/BoxArticle';
 import Helmet from "react-helmet";
@@ -10,7 +19,7 @@ import './index.css';
 import  RecentArticles from "../components/widgets/recentArticles/RecentArticles";
 
 
-class BlogHome extends  React.Component {
+class BlogHomePage extends  React.Component {
     render () {
         const posts =  get(this, "props.data.allMarkdownRemark.edges");
 
@@ -37,5 +46,5 @@ class BlogHome extends  React.Component {
     }
 }
 
-export default BlogHome
+export default BlogHomePage
 */

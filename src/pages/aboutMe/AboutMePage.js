@@ -1,6 +1,6 @@
-/*
+
 import React from 'react';
-import config from "../../../config-blog";
+import config from "../../config-blog";
 import cv from "./cvDTO";
 import formatted from "./convert/formatterToMilestone"
 
@@ -15,7 +15,7 @@ function IsPar(n){
     return (n % 2 === 0);
 }
 
-class ConocemePage extends React.Component {
+class AboutMePage extends React.Component {
     render () {
         return(<main>
                 <section className="introduction-cv">
@@ -72,5 +72,5 @@ class ConocemePage extends React.Component {
     }
 }
 
-export default ConocemePage
-*/
+export default AboutMePage
+
