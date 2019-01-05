@@ -28,8 +28,7 @@ class MainTemplate extends React.Component {
                         <MenuNav/>
                     </header>
                     <main id="pageMain" className="page-main">
-                        {/* Main Content
-                      //gatby  {this.props.children()}*/}
+                        {this.props.children}
                     </main>
                     <footer className="footer">
                         <div className="path-typography-footer">

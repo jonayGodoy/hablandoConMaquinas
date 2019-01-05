@@ -1,7 +1,7 @@
 {
   "name": "hablando-con-maquinas",
   "description": "Personal Blog",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "engines": {
     "node": ">=8",
     "npm": ">=3"

@@ -1,6 +1,7 @@
 /* eslint-disable import/no-named-as-default */
 import React from "react";
-import { NavLink, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import MainTemplate from '../components/commons/template/MainTemplate';
 import AboutMePage from "./aboutMe/AboutMePage";
 import HomePage from "./home/BlogHomePage";
 import NotFoundPage from "./notFoundPage/NotFoundPage";
@@ -12,12 +13,15 @@ class App extends React.Component {
     return (
         <div>
           <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path={routesPath.aboutMe.path} component={AboutMePage} />
-            <Route component={NotFoundPage} />
+            <Route exact path={routesPath.home.path} render = {mountIntoTemplate(<HomePage/>)} />
+            <Route path={routesPath.aboutMe.path}  render = {mountIntoTemplate(<AboutMePage/>)}/>
+            <Route render = {mountIntoTemplate(<NotFoundPage/>)}/>
           </Switch>
         </div>
     );
+    function mountIntoTemplate(children){
+      return () => <MainTemplate children={children}/>
+    }
   }
 }
 export default hot(module)(App);
