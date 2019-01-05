@@ -1,5 +1,5 @@
 ---
-title: Hack For Good Big Day
+title: "Hack For Good Big Day"
 date: "2017-09-29T02:40:32.169Z"
 path: "/hack-for-good-big-day/"
 image_article: "coverMain.jpg"

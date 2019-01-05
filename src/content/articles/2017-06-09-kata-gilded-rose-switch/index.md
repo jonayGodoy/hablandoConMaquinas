@@ -1,5 +1,5 @@
 ---
-title: Kata Gilded Rose Switch
+title: "Kata Gilded Rose Switch"
 date: "2017-05-30T02:40:32.169Z"
 path: "/kata-gilded-rose-switch/"
 image_article: "kata.jpg"

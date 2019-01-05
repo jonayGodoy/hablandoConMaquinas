@@ -1,5 +1,5 @@
 ---
-title: La Historia De Mi Blog
+title: "La Historia De Mi Blog"
 date: "2017-05-30T02:40:32.169Z"
 path: "/la-historia-de-mi-blog/"
 image_article: "image-article.jpg"

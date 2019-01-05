@@ -1,5 +1,5 @@
 ---
-title: Empezamos con los juegos educativos.Screeps y Codecombat
+title: "Empezamos con los juegos educativos.Screeps y Codecombat"
 date: "2017-09-09T22:40:32.169Z"
 path: "/empezamos-con-los-juegos-educativos/"
 image_article: "image-article.png"

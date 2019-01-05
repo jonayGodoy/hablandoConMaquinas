@@ -1,5 +1,5 @@
 ---
-title: No Fast Forward
+title: "No Fast Forward"
 date: "2017-12-03T02:40:32.169Z"
 path: "/no-fast-forward/"
 image_article: "coverMain.jpg"

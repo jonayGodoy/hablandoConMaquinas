@@ -1,5 +1,5 @@
 ---
-title: Vista Pasiva
+title: "Vista Pasiva"
 date: "2017-12-17T02:40:32.169Z"
 path: "/vista-pasiva/"
 image_article: "mvp.png"

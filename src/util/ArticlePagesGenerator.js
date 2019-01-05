@@ -10,21 +10,67 @@ const markdownContext = require.context('../content/articles', true, /\.md$/);
 export default function ArticlePagesGenerator() {
   function generateAndPublicMeta() {
     const markdownPages = markdownContext.keys().map(markdownContext);
-    return markdownPages.map((article, index) => generatePage(article, index));
+    const markdownPagesModel = buildMarkdownPagesModel(markdownPages);
+    console.log(markdownPagesModel.metaDataPages);
+    return generateReactPages(markdownPagesModel.markdownPagesFormatted);
 
-    function generatePage(article, index){
-      return (
-        <Markdown
-          key={index}
-          options={{
-            overrides: {
-              img: {
-                component: Image
+    function buildMarkdownPagesModel(markdownPages){
+      const markdownPagesFormatted = markdownPages .map(page => markdownPagesFormat(page));
+      const metaDataPages = markdownPages.map(page => markdownExtractMetaData(page));
+      return {
+        metaDataPages: metaDataPages,
+        markdownPagesFormatted: markdownPagesFormatted
+      };
+
+      function markdownPagesFormat(page){
+        const from = page.indexOf("---");
+        const to = page.indexOf("---", from+1);
+        return page.substring(to, page.length);
+      }
+
+      function markdownExtractMetaData(page){
+        const from = page.indexOf("---")+3;
+        const to = page.indexOf("---", from+4);
+        const metaData = formatJSON(page, from, to);
+        console.log(metaData);
+        //todo: poner un test aqui
+        return becomeMetaDateJson(metaData);
+
+        function formatJSON(page, from, to){
+          //todo:simplificar codigo
+          return "{\""
+            +page
+            .substring(from, to)
+            .trim()
+            .replace(new RegExp(/\n/, 'g'),",\"")
+            .replace(new RegExp(/: "/, 'g'),"\": \"")
+            .replace(new RegExp(/:"/, 'g'),"\":\"")
+            +"}";
+        }
+
+        function becomeMetaDateJson(metaData){
+          return JSON.parse(metaData);
+        }
+      }
+    }
+
+    function generateReactPages(markdownPagesFormatted){
+      return markdownPagesFormatted.map((article, index) => generatePage(article, index));
+
+      function generatePage(article, index){
+        return (
+          <Markdown
+            key={index}
+            options={{
+              overrides: {
+                img: {
+                  component: Image
+                },
               },
-            },
-          }}
-        >{article}</Markdown>
-      )
+            }}
+          >{article}</Markdown>
+        )
+      }
     }
   }
 

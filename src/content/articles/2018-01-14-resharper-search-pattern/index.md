@@ -1,5 +1,5 @@
 ---
-title: ReSharper, Search Pattern
+title: "ReSharper, Search Pattern"
 date: "2018-01-14T02:40:32.169Z"
 path: "/resharper-search-pattern/"
 image_article: "searchPattern_26.jpg"

@@ -1,5 +1,5 @@
 ---
-title: Convierte tu perfil Linkedin en un curriculum
+title: "Convierte tu perfil Linkedin en un curriculum"
 date: "2017-09-12T02:40:32.169Z"
 path: "/convierte-tu-perfil-de-Linkedin-en-tu-cv/"
 image_article: "cover.jpg"
