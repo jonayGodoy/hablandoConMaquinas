@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
-
 import MenuNav from '../menuNav/MenuNav';
 import MenuMobile from '../menuMobile/MenuMobile';
 
 import config_blog from "../../../config-blog"
 
-//import '../../../styles.css';
+import '../../../styles.css';
 import './template.css';
 import "./footer.css"
 

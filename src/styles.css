@@ -1,0 +1,93 @@
+/*
+Mover este archivo en lugar más general es el archivo de estilo principal
+ */
+
+:root{
+    --font_head: Consolas;
+    --font_body: sans-serif;
+
+
+    /* not work*/
+    --min-width-px: 768px;
+    --box-main-color: #fff;
+}
+
+body {
+    font-family: var(--font_body);
+    color: #555;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    margin-top: 0;
+    font-family: var(--font_head);
+    font-weight: normal;
+    color: #333;
+}
+
+/*path gatsby link underline*/
+/*remove boostrap */
+.gatsby-resp-image-link{
+    box-shadow: 0 0 0 0;
+}
+
+a{
+  color: #34a392;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover{
+    color: #2a8372;
+}
+
+a:hover,
+a:focus {
+    /*parch of a:focus*/
+    text-decoration: none;
+}
+
+p a:hover,
+p a:focus {
+    /*parch of a:focus*/
+    text-decoration: none;
+}
+
+p a{
+    /*parch of a:focus*/
+    text-decoration: underline;
+}
+
+hr.head {
+    border-top: 1px solid #8c8b8b;
+}
+
+@media (min-width: 768px) {
+    body{
+        background-image: url("assets/img/background.jpg") ;
+    }
+}
+
+
+/*copy elements boostrap*/
+
+.img-thumbnail-new {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+}
+
+
+/*Parche por culpa de gaysby*/
+p {
+    margin-bottom: 0;
+}
