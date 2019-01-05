@@ -1,6 +1,5 @@
 import Markdown from 'markdown-to-jsx';
 import React from 'react';
-import { render } from 'react-dom';
 
 const markdownContext = require.context('../content/articles/2017-05-30-la-historia-de-mi-blog', false, /\.md$/);
 
