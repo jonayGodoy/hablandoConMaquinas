@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import config from "../../../config-blog"
 import * as routesPath from "../../../pages/routePath";
 
@@ -14,15 +14,15 @@ const MenuNav = () => {
     return (
         <div className="header hidden-header">
             <div className="pathPadding">
-                <Link to={routesPath.home.path}>
+                <NavLink to={routesPath.home.path}>
                     <div className="img-logo" style={ { backgroundImage: `url(${img_head})`} } />
-                </Link>
+                </NavLink>
                 <div className="blog-nav">
-                    <Link to={routesPath.home.path} className="title-header">
+                    <NavLink to={routesPath.home.path} className="title-header">
                         <h3>{config.blogTitle}</h3>
-                    </Link>
+                    </NavLink>
                     {routesPath.routes.map((routePath, index) =>(
-                            <Link key={index} className="blog-nav-item" to={routePath.path}>{routePath.name}</Link>
+                            <NavLink key={index} className="blog-nav-item" to={routePath.path}>{routePath.name}</NavLink>
                     ))}
                 </div>
             </div>
