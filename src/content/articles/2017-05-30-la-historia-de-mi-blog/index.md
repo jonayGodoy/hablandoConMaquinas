@@ -26,6 +26,7 @@ En las clases uno de mis profesores me mostró el primer cms con
 el que trabaje.
 
 ![Joomla](joomla-version.jpg)
+<img src"joomla-version.jpg"/>
 
 Si ya sé cómo vais a descubrir me gustan los blancos y
 negros. Joomla me abrió los ojos al problema de los cms hacer
