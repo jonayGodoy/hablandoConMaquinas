@@ -11,8 +11,6 @@ import img_head from '../../../assets/img/head.jpg';
 
 const MenuNav = () => {
 
-  return(<div>hhhhhh</div>);
-
     return (
         <div className="header hidden-header">
             <div className="pathPadding">
