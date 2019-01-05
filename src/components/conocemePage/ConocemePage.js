@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import config from "../../../config-blog";
 import cv from "./cvDTO";
@@ -72,4 +73,4 @@ class ConocemePage extends React.Component {
 }
 
 export default ConocemePage
-
+*/

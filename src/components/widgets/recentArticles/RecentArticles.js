@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import Link from "gatsby-link"
 import "./recent-articles.css"
@@ -39,3 +40,4 @@ class RecentArticles extends React.Component {
 
 
 export default RecentArticles;
+*/

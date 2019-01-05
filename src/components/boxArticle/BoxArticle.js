@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import Link from "gatsby-link";
 import * as routesPath from "../../routePath";
@@ -25,15 +26,15 @@ class BoxArticles extends React.Component {
                 </Link>
                 <ul className="details">
                     <li className="author">
-                        {/* todo: testear el comportamiento del autor terminar que hacer que funciones ahora solo esta planteado*/}
+                        /*
                         <Link to={!post.node.frontmatter.author_path ? routesPath.conoceme.path : ""}>
                             {post.node.author || "Jonay Godoy" }
                         </Link>
                     </li>
-                    <li className="date">{/*Aug. 24, 2015 Darle formato a la fecha*/post.node.frontmatter.date}</li>
+                    <li className="date">{/*Aug. 24, 2015 Darle formato a la fecha*//*post.node.frontmatter.date}</li>
                     <li className="tags">
                         <ul>
-                            {/*todo: enlaces no trabajan */}
+
                             {formattedTag.format(post.node.frontmatter.tags)
                                 .map(tag => (
                                     <li>
@@ -64,3 +65,5 @@ class BoxArticles extends React.Component {
 }
 
 export default BoxArticles
+*/
+//acuerdate de recuperar los comentarios

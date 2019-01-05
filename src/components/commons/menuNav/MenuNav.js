@@ -1,14 +1,17 @@
 import React from 'react';
+/*
 import Link  from "gatsby-link";
 import config from "../../../../config-blog"
 import * as routesPath from "../../../routePath";
-
+*/
 
 import './menuNav.css';
-import img_head from '../../../assets/img/head.jpg';
+//import img_head from '../../../assets/img/head.jpg';
 
 
 const MenuNav = () => {
+  return(<div>Insertar MenuNav</div>);
+  /*
     return (
         <div className="header hidden-header">
             <div className="pathPadding">
@@ -26,6 +29,7 @@ const MenuNav = () => {
             </div>
         </div>
     );
+    */
 };
 
 export default MenuNav;

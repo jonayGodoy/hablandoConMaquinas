@@ -1,11 +1,12 @@
 import React from 'react';
 
+
 import MenuNav from '../menuNav/MenuNav';
 import MenuMobile from '../menuMobile/MenuMobile';
 
-import config_blog from "../../../../config-blog"
+import config_blog from "../../../config-blog"
 
-import '../../../styles.css';
+//import '../../../styles.css';
 import './template.css';
 import "./footer.css"
 
@@ -25,8 +26,8 @@ class MainTemplate extends React.Component {
                         <MenuNav/>
                     </header>
                     <main id="pageMain" className="page-main">
-                        {/* Main Content */}
-                        {this.props.children()}
+                        {/* Main Content
+                      //gatby  {this.props.children()}*/}
                     </main>
                     <footer className="footer">
                         <div className="path-typography-footer">

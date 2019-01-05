@@ -1,7 +1,7 @@
 {
-  "name": "react-slingshot",
-  "version": "7.0.1",
-  "description": "Starter kit for creating apps with React and Redux",
+  "name": "hablando-con-maquinas",
+  "description": "Personal Blog",
+  "version": "0.5.0",
   "engines": {
     "node": ">=8",
     "npm": ">=3"
@@ -28,8 +28,7 @@
     "open:cover": "npm run test:cover && opn ./coverage/lcov-report/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js"
   },
-  "author": "Cory House",
-  "license": "MIT",
+  "author": "Jonay Godoy <jonay.godoy.reyes@gmail.com>",
   "dependencies": {
     "connected-react-router": "4.4.1",
     "object-assign": "4.1.1",

@@ -1,3 +1,4 @@
+/*
 import 'jsdom-global/register';
 import React from 'react';
 import { expect } from 'chai';
@@ -55,3 +56,4 @@ describe("<MenuMobile/>", function(){
         expect(wrapper.state().isHidden).to.equal(true);
     });
 });
+*/

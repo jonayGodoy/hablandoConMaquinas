@@ -1,12 +1,13 @@
 import React from 'react';
+/*
 import Link  from "gatsby-link";
 import config from "../../../../config-blog"
 import * as routesPath from "../../../routePath";
-
+*/
 
 import './menuMobile.css';
-import img_head from '../../../assets/img/head.jpg';
-import svg_menu_hamburger from '../../../assets/img/menu-hamburger.svg';
+//import img_head from '../../../assets/img/head.jpg';
+//import svg_menu_hamburger from '../../../assets/img/menu-hamburger.svg';
 
 
 class MenuMobile extends React.Component {
@@ -21,13 +22,15 @@ class MenuMobile extends React.Component {
 
     toggle(){
         this.setState(Object.assign({}, this.state, {isHidden: !this.state.isHidden}));
-    };
+    }
 
     componentDidUpdate(){
         document.documentElement.style.overflowY = !this.state.isHidden ? "hidden" : "";
     }
 
     render(){
+      return(<div>insertar menuMobile</div>);
+      /*
         return (
             <div className="hidden-header-mobile">
 
@@ -60,6 +63,8 @@ class MenuMobile extends React.Component {
                 </div>
             </div>
         );
+        */
+
     }
 }
 
