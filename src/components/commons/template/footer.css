@@ -1,0 +1,32 @@
+.footer{
+    /*add after  display: inline-flex;*/
+    align-items: center;
+    width: 100%;
+
+    background-color: #3F3F3F;
+    border: 1px solid #a0a0a0;
+}
+
+/*path after remove typhografy*/
+.path-typography-footer{
+    padding: 10px;
+    /*remove after*/
+    display: inline-flex;
+    width: 100%;
+}
+
+.title-footer{
+    flex-grow: 8;
+    color: #e5e4e4;
+}
+
+.icons-footer{
+    width: 180px;
+}
+
+.icon-footer{
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    padding-left: 10px;
+}

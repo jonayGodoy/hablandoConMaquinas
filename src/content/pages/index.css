@@ -1,0 +1,49 @@
+.container-new{
+    display: block;
+}
+
+.article{
+    float: left;
+    width: 60%;
+}
+
+.sidebar-column{
+    float: right;
+    width: 30%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.parchForSizeContainer{
+    clear: both;
+}
+
+.module-sidebar {
+    flex: 1;
+    text-align: center;
+    margin-left: 3px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+@media (max-width: 770px) {
+    .container-new {
+        display: block;
+    }
+
+    .article {
+        display: block;
+        width: 100%;
+
+    }
+
+    .sidebar-column {
+        width: 100%;
+        display: block;
+    }
+
+    .module-sidebar {
+        display: block;
+    }
+}
