@@ -1,10 +1,11 @@
 import Markdown from 'markdown-to-jsx';
 import React, {Component} from 'react';
-
-const markdownContext = require.context('../content/articles/2017-05-30-la-historia-de-mi-blog', false, /\.md$/);
+//todo: mejorar la firma del generador ahora el metodo tiene dos funciones
+//const markdownImages = require.context('../content/articles', true, /\.(jpe?g|png|gif|ico)$/i)
+const markdownContext = require.context('../content/articles', true, /\.md$/);
 
 export default function ArticlePagesGenerator() {
-  function generateAndPublic() {
+  function generateAndPublicMeta() {
     const markdownPages = markdownContext.keys().map(markdownContext);
     return markdownPages.map((article, index) => generatePage(article, index));
 
@@ -25,7 +26,7 @@ export default function ArticlePagesGenerator() {
   }
 
   return {
-    generateAndPublic: generateAndPublic
+    generateAndPublicMeta: generateAndPublicMeta
   }
 }
 
@@ -34,9 +35,17 @@ class Image extends Component {
   constructor(props, context) {
     super(props, context);
   }
-
+/*todo: extrar el componente imgae a un estilo y a js*/
   render() {
-    return (<div><img src={this.props.src}/></div>)
+    return (<div>
+      <img src={this.props.src}
+                      style={{
+                        display: 'block',
+                        margin: '0 auto',
+                        width: '100%',
+                        maxWidth: '800px',
+                        height: 'auto'}}/>
+    </div>)
   }
 }
 

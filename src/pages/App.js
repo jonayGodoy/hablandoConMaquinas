@@ -26,7 +26,7 @@ class App extends React.Component {
       return () => <MainTemplate children={children}/>
     }
     function mountArticlePages(){
-      const articlePages = ArticlePageGenerator().generateAndPublic();
+      const articlePages = ArticlePageGenerator().generateAndPublicMeta();
 
       return articlePages.map(
         (articlePage,index) => <Route key={index}

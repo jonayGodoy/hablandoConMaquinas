@@ -30,7 +30,6 @@
   },
   "author": "Jonay Godoy <jonay.godoy.reyes@gmail.com>",
   "dependencies": {
-    "connected-react-router": "4.4.1",
     "markdown-to-jsx": "6.9.0",
     "object-assign": "4.1.1",
     "raw-loader": "1.0.0",
