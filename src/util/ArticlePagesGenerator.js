@@ -1,7 +1,10 @@
 import Markdown from 'markdown-to-jsx';
 import React, {Component} from 'react';
 //todo: mejorar la firma del generador ahora el metodo tiene dos funciones
-//const markdownImages = require.context('../content/articles', true, /\.(jpe?g|png|gif|ico)$/i)
+
+//aunque no se usen esto carga todas las imagenes
+require.context('../content/articles', true, /\.(jpe?g|png|gif|ico)$/i);
+
 const markdownContext = require.context('../content/articles', true, /\.md$/);
 
 export default function ArticlePagesGenerator() {
