@@ -10,9 +10,11 @@ import  RecentArticles from "../../components/widgets/recentArticles/RecentArtic
 
 
 class BlogHomePage extends Component {
+  constructor(props, context) {
+    super(props, context);
+  }
     render () {
       //  const posts =  get(this, "props.data.allMarkdownRemark.edges");
-
         return (<div className="container-new">
             <div className="article">
               <div>insertar article</div>
@@ -32,8 +34,7 @@ class BlogHomePage extends Component {
             </div>
             <aside className="sidebar-column">
                 <div>
-                  {/*  <RecentArticles posts={posts}/>*/}
-                  <div>insertar widget</div>
+                  <RecentArticles posts={this.props.metaArticlePages}/>
                 </div>
             </aside>
             <div className="parchForSizeContainer"/>

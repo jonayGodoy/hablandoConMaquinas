@@ -8,18 +8,19 @@ require.context('../content/articles', true, /\.(jpe?g|png|gif|ico)$/i);
 const markdownContext = require.context('../content/articles', true, /\.md$/);
 
 export default function ArticlePagesGenerator() {
-  function generateAndPublicMeta() {
+  function generate() {
     const markdownPages = markdownContext.keys().map(markdownContext);
     const markdownPagesModel = buildMarkdownPagesModel(markdownPages);
-    console.log(markdownPagesModel.metaDataPages);
-    return generateReactPages(markdownPagesModel.markdownPagesFormatted);
+    return markdownPagesModel;
 
     function buildMarkdownPagesModel(markdownPages){
-      const markdownPagesFormatted = markdownPages .map(page => markdownPagesFormat(page));
       const metaDataPages = markdownPages.map(page => markdownExtractMetaData(page));
+      const markdownReactPages = markdownPages
+        .map(page =>
+          generatePage(markdownPagesFormat(page)));
       return {
         metaDataPages: metaDataPages,
-        markdownPagesFormatted: markdownPagesFormatted
+        markdownReactPages: markdownReactPages
       };
 
       function markdownPagesFormat(page){
@@ -32,7 +33,6 @@ export default function ArticlePagesGenerator() {
         const from = page.indexOf("---")+3;
         const to = page.indexOf("---", from+4);
         const metaData = formatJSON(page, from, to);
-        console.log(metaData);
         //todo: poner un test aqui
         return becomeMetaDateJson(metaData);
 
@@ -54,28 +54,25 @@ export default function ArticlePagesGenerator() {
       }
     }
 
-    function generateReactPages(markdownPagesFormatted){
-      return markdownPagesFormatted.map((article, index) => generatePage(article, index));
 
-      function generatePage(article, index){
-        return (
-          <Markdown
-            key={index}
-            options={{
-              overrides: {
-                img: {
-                  component: Image
-                },
+    function generatePage(article, index){
+      return (
+        <Markdown
+          key={index}
+          options={{
+            overrides: {
+              img: {
+                component: Image
               },
-            }}
-          >{article}</Markdown>
-        )
-      }
+            },
+          }}
+        >{article}</Markdown>
+      )
     }
   }
 
   return {
-    generateAndPublicMeta: generateAndPublicMeta
+    generate: generate
   }
 }
 

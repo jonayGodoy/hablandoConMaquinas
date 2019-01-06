@@ -9,28 +9,36 @@ import NotFoundPage from "./notFoundPage/NotFoundPage";
 import * as routesPath from "./routePath";
 import { hot } from "react-hot-loader";
 
+const markdownPagesModel = ArticlePageGenerator().generate();
+
 class App extends React.Component {
+  constructor(props, context){
+    super(props, context);
+  }
+
   render() {
     return (
         <div>
           <Switch>
-            <Route exact path={routesPath.home.path} render = {mountIntoTemplate(<HomePage/>)} />
+            <Route exact path={routesPath.home.path} render = {mountIntoTemplate(<HomePage metaArticlePages={markdownPagesModel.metaDataPages}/>)} />
             <Route path={routesPath.aboutMe.path}  render = {mountIntoTemplate(<AboutMePage/>)}/>
-            {mountArticlePages()}
-            <Route render = {mountIntoTemplate(<NotFoundPage/>)}/>
-
+            {mountArticlePages(markdownPagesModel.markdownReactPages)}
+            <Route render = {mountIntoTemplate(NotFoundPage)}/>
           </Switch>
         </div>
     );
-    function mountIntoTemplate(children){
-      return () => <MainTemplate children={children}/>
-    }
-    function mountArticlePages(){
-      const articlePages = ArticlePageGenerator().generateAndPublicMeta();
 
-      return articlePages.map(
+    function mountIntoTemplate(children){
+      return () => <MainTemplate
+        children={children}
+        metaArticlePages = {markdownPagesModel.metaDataPages}
+        />
+    }
+    function mountArticlePages(markdownReactPages){
+      //todo: usar tu propio componente en lugar del markdown de la libreiria
+      return markdownReactPages.map(
         (articlePage,index) => <Route key={index}
-                                      path={"/"+index+"/"}
+                                      path={markdownPagesModel.metaDataPages[index].path}
                                       render = {mountIntoTemplate(articlePage)}/>
         );
     }
