@@ -3,9 +3,9 @@ import React, {Component} from 'react';
 //todo: mejorar la firma del generador ahora el metodo tiene dos funciones
 
 //aunque no se usen esto carga todas las imagenes
-require.context('../content/articles', true, /\.(jpe?g|png|gif|ico)$/i);
+require.context('../../content/articles', true, /\.(jpe?g|png|gif|ico)$/i);
 
-const markdownContext = require.context('../content/articles', true, /\.md$/);
+const markdownContext = require.context('../../content/articles', true, /\.md$/);
 
 export default function ArticlePagesGenerator() {
   function generate() {

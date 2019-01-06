@@ -1,7 +1,7 @@
 /* eslint-disable import/no-named-as-default */
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import ArticlePageGenerator from "../util/ArticlePagesGenerator"
+import ArticlePageGenerator from "../utils/articlePagesGenerator/ArticlePagesGenerator"
 import MainTemplate from '../components/commons/template/MainTemplate';
 import AboutMePage from "./aboutMe/AboutMePage";
 import HomePage from "./home/BlogHomePage";

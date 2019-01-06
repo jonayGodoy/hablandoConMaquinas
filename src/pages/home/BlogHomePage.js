@@ -1,7 +1,4 @@
-
 import React, {Component} from 'react';
-import MainTemplate from '../../components/commons/template/MainTemplate';
-
 
 import BoxArticle from '../../components/boxArticle/BoxArticle';
 import './index.css';
@@ -19,18 +16,15 @@ class BlogHomePage extends Component {
             <div className="article">
               <div>insertar article</div>
 
-              {/* <Helmet title={get(this, "props.data.site.siteMetadata.title")} />*/
-              /*
+              {/* <Helmet title={get(this, "props.data.site.siteMetadata.title")} />*/}
+
                 <div>
                     {
-                        posts.map((post,index) => {
-                            if (post.node.path !== "/404/") {
-                                return <BoxArticle key={index} post={post}/>
-                            }
-                        })
+                      this.props.metaArticlePages
+                        .map((post,index) => <BoxArticle key={index} post={post}/>)
                     }
                 </div>
-                */}
+
             </div>
             <aside className="sidebar-column">
                 <div>
