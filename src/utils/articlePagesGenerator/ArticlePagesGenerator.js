@@ -9,7 +9,9 @@ const markdownContext = require.context('../../content/articles', true, /\.md$/)
 
 export default function ArticlePagesGenerator() {
   function generate() {
-    const markdownPages = markdownContext.keys().map(markdownContext);
+    const markdownPages = markdownContext.keys()
+      .map(markdownContext)
+      .reverse();
     const markdownPagesModel = buildMarkdownPagesModel(markdownPages);
     return markdownPagesModel;
 
