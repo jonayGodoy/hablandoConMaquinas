@@ -44,6 +44,7 @@ class BoxArticles extends React.Component {
                         {post.title}
                     </Link>
                 </h3>
+              {/*todo: reparar <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />*/}
                 <Link
                     className="read-more"
                     style={{ boxShadow: "none" }}

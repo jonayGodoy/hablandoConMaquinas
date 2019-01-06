@@ -2,7 +2,7 @@
 title: "Sweet Home 3D"
 date: "2018-07-01T02:40:32.169Z"
 path: "/sweet-home-crea-habitaciones-en-3d/"
-image_article: "cover.jpg"
+image_article: "cover4.jpg"
 tags: "games,3D"
 ---
 
