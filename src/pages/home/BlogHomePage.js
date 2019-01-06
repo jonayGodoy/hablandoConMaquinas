@@ -14,8 +14,6 @@ class BlogHomePage extends Component {
       //  const posts =  get(this, "props.data.allMarkdownRemark.edges");
         return (<div className="container-new">
             <div className="article">
-              <div>insertar article</div>
-
               {/* <Helmet title={get(this, "props.data.site.siteMetadata.title")} />*/}
 
                 <div>
