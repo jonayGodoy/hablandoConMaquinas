@@ -31,6 +31,7 @@
   "author": "Jonay Godoy <jonay.godoy.reyes@gmail.com>",
   "dependencies": {
     "markdown-to-jsx": "6.9.0",
+    "moment": "2.23.0",
     "object-assign": "4.1.1",
     "raw-loader": "1.0.0",
     "react": "16.4.2",

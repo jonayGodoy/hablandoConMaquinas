@@ -5,19 +5,19 @@ import * as routesPath from "../../pages/routePath";
 import formattedTag from "../../utils/formaterTag/formatterTags";
 import './boxArticle.css';
 
-//const imagesAllArticles = require.context("../../pages/", true,  /\.(png|jpg|gif)$/);
+const moment = require('moment');
 
 class BoxArticles extends React.Component {
 
     constructor(props, context){
       super(props, context);
-     // this.cover = imagesAllArticles("./"+this.props.post.image_article);
       //todo: volver a poner los comentarios
     }
 
   render () {
     const post = this.props.post;
-
+    const date = moment(post.date);
+    moment.locale('es')
     return(
         <section className="blog-card">
             <div className="photo-details">
@@ -30,7 +30,7 @@ class BoxArticles extends React.Component {
                             {post.author || "Jonay Godoy" }
                         </Link>
                     </li>
-                    <li className="date">{/*Aug. 24, 2015 Darle formato a la fecha*/ post.date}</li>
+                    <li className="date">{date.format("DD MMMM, YYYY")}</li>
                     <li className="tags">
                         <ul>
                             {formattedTag.format(post.tags).map(tag => (<li>{tag}</li>))}
