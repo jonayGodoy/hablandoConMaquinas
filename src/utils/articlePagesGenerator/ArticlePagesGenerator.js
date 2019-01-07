@@ -12,6 +12,7 @@ export default function ArticlePagesGenerator() {
   const markdownPages = recoverMarkdownFiles();
 
   function generate() {
+    //todo este metodo es llamado 2 veces
     return buildMarkdownPagesModel(markdownPages);
 
     function buildMarkdownPagesModel(markdownPages){
