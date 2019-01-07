@@ -98,8 +98,8 @@ export default function ArticlePagesGenerator() {
         )
       }
 
-      function introduceTagIntoTemplate(jsxMarkdownTag, page){
-        return <ArticleTemplate children={jsxMarkdownTag} post={page}/>
+      function introduceTagIntoTemplate(children, page){
+        return <ArticleTemplate post={page}>{children}</ArticleTemplate>
       }
     }
   }
