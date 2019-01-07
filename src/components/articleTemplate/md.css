@@ -1,0 +1,25 @@
+
+/* Spoiler*/
+details {
+    padding: 20px;
+}
+details ul{
+    padding: 20px;
+    border-radius: 10px;
+    background: #EEE;
+    text-align: left;
+}
+summary::-webkit-details-marker {
+    display:none;
+}
+summary {
+    text-align: center;
+    border-radius: 10px;
+    border: solid #515151;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+
+
+

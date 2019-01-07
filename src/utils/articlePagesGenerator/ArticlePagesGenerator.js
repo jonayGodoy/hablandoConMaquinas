@@ -1,6 +1,7 @@
 import Markdown from 'markdown-to-jsx';
 import React, {Component} from 'react';
-//todo: mejorar la firma del generador ahora el metodo tiene dos funciones
+
+import ArticleTemplate from '../../components/articleTemplate/ArticleTemplate';
 
 //aunque no se usen esto carga todas las imagenes
 require.context('../../content/articles', true, /\.(jpe?g|png|gif|ico)$/i);
@@ -15,16 +16,15 @@ export default function ArticlePagesGenerator() {
     //todo este metodo es llamado 2 veces
     return buildMarkdownPagesModel(markdownPages);
 
-    function buildMarkdownPagesModel(markdownPages){
+    function buildMarkdownPagesModel(markdownPages) {
       const pages = markdownPages.map(page => converterMarkdownPageModel(page));
-      const markdownReactPages = markdownPages
-        .map(page =>  generatePage(extractContentToPage(page)));
+      const markdownReactPages = generateArticlePage(pages);
       return {
         pages: pages,
         markdownReactPages: markdownReactPages
       };
 
-      function converterMarkdownPageModel(page){
+      function converterMarkdownPageModel(page) {
         const content = extractContentToPage(page);
         const metaData = generateMetaData(page, content);
         return {
@@ -32,66 +32,78 @@ export default function ArticlePagesGenerator() {
           content: content
         };
 
-        function generateMetaData(page, content){
+        function generateMetaData(page, content) {
           const metaData = extractMetaDataToPage(page);
           metaData.description = extractDescription(content);
           return metaData;
 
-          function extractMetaDataToPage(page,){
-            const from = page.indexOf("---")+3;
-            const to = page.indexOf("---", from+4);
+          function extractMetaDataToPage(page,) {
+            const from = page.indexOf("---") + 3;
+            const to = page.indexOf("---", from + 4);
             const metaData = formatJSON(page, from, to);
             //todo: poner un test aqui
             return becomeMetaDateJson(metaData);
 
-            function formatJSON(page, from, to){
+            function formatJSON(page, from, to) {
               //todo:simplificar codigo
               return "{\""
-                +page
+                + page
                   .substring(from, to)
                   .trim()
-                  .replace(new RegExp(/\n/, 'g'),",\"")
-                  .replace(new RegExp(/: "/, 'g'),"\": \"")
-                  .replace(new RegExp(/:"/, 'g'),"\":\"")
-                +"}";
+                  .replace(new RegExp(/\n/, 'g'), ",\"")
+                  .replace(new RegExp(/: "/, 'g'), "\": \"")
+                  .replace(new RegExp(/:"/, 'g'), "\":\"")
+                + "}";
             }
 
-            function becomeMetaDateJson(metaData){
+            function becomeMetaDateJson(metaData) {
               return JSON.parse(metaData);
             }
           }
 
-          function extractDescription(content){
+          function extractDescription(content) {
             const characterNumber = 140;
-            return content.substring(0,characterNumber);
+            return content.substring(0, characterNumber);
           }
         }
       }
     }
 
-    function extractContentToPage(page){
+    function extractContentToPage(page) {
       const from = page.indexOf("---");
-      const to = page.indexOf("---", from+1)+3;
+      const to = page.indexOf("---", from + 1) + 3;
       return page.substring(to, page.length);
     }
 
-    function generatePage(article, index){
-      return (
-        <Markdown
-          key={index}
-          options={{
-            overrides: {
-              img: {
-                component: Image
+    function generateArticlePage(pages){
+      return pages
+        .map((page,index) => {
+           let jsxMarkdownTag = generateJSXMarkdownTag(page.content, index);
+           return introduceTagIntoTemplate(jsxMarkdownTag, page);}
+         );
+
+      function generateJSXMarkdownTag(article, index) {
+        return (
+          <Markdown
+            key={index}
+            options={{
+              overrides: {
+                img: {
+                  component: Image
+                },
               },
-            },
-          }}
-        >{article}</Markdown>
-      )
+            }}
+          >{article}</Markdown>
+        )
+      }
+
+      function introduceTagIntoTemplate(jsxMarkdownTag, page){
+        return <ArticleTemplate children={jsxMarkdownTag} post={page}/>
+      }
     }
   }
 
-  function recoverMarkdownFiles(){
+  function recoverMarkdownFiles() {
     return markdownContext.keys()
       .map(markdownContext)
       .reverse();
@@ -107,16 +119,18 @@ class Image extends Component {
   constructor(props, context) {
     super(props, context);
   }
-/*todo: extrar el componente imgae a un estilo y a js*/
+
+  /*todo: extrar el componente imgae a un estilo y a js*/
   render() {
     return (<div>
-      <img src={this.props.src}
-                      style={{
-                        display: 'block',
-                        margin: '0 auto',
-                        width: '100%',
-                        maxWidth: '800px',
-                        height: 'auto'}}/>
+      <img src={"../"+this.props.src}
+           style={{
+             display: 'block',
+             margin: '0 auto',
+             width: '100%',
+             maxWidth: '800px',
+             height: 'auto'
+           }}/>
     </div>)
   }
 }

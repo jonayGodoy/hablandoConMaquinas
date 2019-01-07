@@ -1,0 +1,9 @@
+.img-cover{
+    height: 300px;
+    display:block;
+    margin:auto;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
