@@ -1,6 +1,7 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 
-export default class Image extends Component {
+class Image extends Component {
   constructor(props, context) {
     super(props, context);
   }
@@ -16,3 +17,8 @@ export default class Image extends Component {
            }}/>)
   }
 }
+Image.propTypes = {
+  children: PropTypes.string.isRequired
+};
+
+export default Image;
