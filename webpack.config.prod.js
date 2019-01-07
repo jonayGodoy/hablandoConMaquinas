@@ -120,6 +120,9 @@ export default {
             options: {
               name: '[name].[ext]'
             }
+          },
+          {
+            loader: 'image-webpack-loader'
           }
         ]
       },
