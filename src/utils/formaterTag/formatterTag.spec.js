@@ -1,6 +1,4 @@
-
-import {TAGS_CONST} from "./formatterTags"
-import formatter from "./formatterTags"
+import formatter,{TAGS_CONST} from "./formatterTags";
 
 describe("Formatter Tag",() =>{
     it("return convert raw tags in tag", () => {
