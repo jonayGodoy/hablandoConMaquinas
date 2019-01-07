@@ -42,7 +42,7 @@ describe("Formatter Tag",() =>{
 
         let rawFunction = () => {formatter.format(rawTags)};
 
-        expect(rawFunction).toThrow("tag \'eventas\' does not exist in const list");
+        expect(rawFunction).toThrow("tag 'eventas' does not exist in const list");
     });
 
     function expectDeepEqualsIgnoreCase(parameters){

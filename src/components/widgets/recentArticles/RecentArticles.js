@@ -14,7 +14,6 @@ class RecentArticles extends React.Component {
         this.metaData = posts.map(post => post.metaData);
     }
 
-
     render () {
         return (
             <div className="recent-articles widget">
