@@ -1,12 +1,12 @@
 /* eslint-disable import/no-named-as-default */
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import ArticlePageGenerator from "../utils/articlePagesGenerator/ArticlePagesGenerator"
-import MainTemplate from '../components/commons/template/MainTemplate';
-import AboutMePage from "./aboutMe/AboutMePage";
-import HomePage from "./home/BlogHomePage";
-import NotFoundPage from "./notFoundPage/NotFoundPage";
-import * as routesPath from "./routePath";
+import ArticlePageGenerator from "../../utils/articlePagesGenerator/ArticlePagesGenerator"
+import MainTemplate from '../../components/commons/template/MainTemplate';
+import AboutMePage from "../aboutMe/AboutMePage";
+import HomePage from "../home/BlogHomePage";
+import NotFoundPage from "../notFoundPage/NotFoundPage";
+import * as routesPath from "../routePath";
 import { hot } from "react-hot-loader";
 
 const markdownPagesModel = ArticlePageGenerator().generate();
