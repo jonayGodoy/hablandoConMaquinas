@@ -20,6 +20,8 @@
     "remove-dist": "rimraf ./dist",
     "prebuild": "npm run lint && npm run test && npm run clean-dist",
     "build": "babel-node tools/build.js && npm run open:dist",
+    "deploy": "npm run build && npm run deploy:fast",
+    "deploy:fast": "gh-pages -d dist",
     "test": "jest",
     "test:CI": "jest",
     "test:cover": "npm run test -- --coverage ",
@@ -68,6 +70,7 @@
     "eslint-plugin-react": "7.11.1",
     "eslint-watch": "4.0.2",
     "file-loader": "2.0.0",
+    "gh-pages": "2.0.1",
     "hard-source-webpack-plugin": "0.12.0",
     "history": "4.7.2",
     "html-webpack-plugin": "3.2.0",
@@ -106,12 +109,7 @@
     "reload",
     "hmr",
     "live",
-    "edit",
-    "webpack",
-    "redux",
-    "flux",
-    "boilerplate",
-    "starter"
+    "webpack"
   ],
   "repository": {
     "type": "git",
