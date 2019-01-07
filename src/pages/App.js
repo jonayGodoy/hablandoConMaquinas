@@ -20,7 +20,7 @@ class App extends React.Component {
     return (
         <div>
           <Switch>
-            <Route exact path={routesPath.home.path} render = {mountIntoTemplate(<HomePage metaArticlePages={markdownPagesModel.metaDataPages}/>)} />
+            <Route exact path={routesPath.home.path} render = {mountIntoTemplate(<HomePage pages={markdownPagesModel.pages}/>)} />
             <Route path={routesPath.aboutMe.path}  render = {mountIntoTemplate(<AboutMePage/>)}/>
             {mountArticlePages(markdownPagesModel.markdownReactPages)}
             <Route render = {mountIntoTemplate(NotFoundPage)}/>
@@ -31,14 +31,14 @@ class App extends React.Component {
     function mountIntoTemplate(children){
       return () => <MainTemplate
         children={children}
-        metaArticlePages = {markdownPagesModel.metaDataPages}
+        pages = {markdownPagesModel.pages}
         />
     }
     function mountArticlePages(markdownReactPages){
       //todo: usar tu propio componente en lugar del markdown de la libreiria
       return markdownReactPages.map(
         (articlePage,index) => <Route key={index}
-                                      path={markdownPagesModel.metaDataPages[index].path}
+                                      path={markdownPagesModel.pages[index].path}
                                       render = {mountIntoTemplate(articlePage)}/>
         );
     }

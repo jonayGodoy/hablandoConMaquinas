@@ -18,7 +18,7 @@ class BlogHomePage extends Component {
 
                 <div>
                     {
-                      this.props.metaArticlePages
+                      this.props.pages
                         .map((post,index) => <BoxArticle key={index} post={post}/>)
                     }
                 </div>
@@ -26,7 +26,7 @@ class BlogHomePage extends Component {
             </div>
             <aside className="sidebar-column">
                 <div>
-                  <RecentArticles posts={this.props.metaArticlePages}/>
+                  <RecentArticles posts={this.props.pages}/>
                 </div>
             </aside>
             <div className="parchForSizeContainer"/>

@@ -11,7 +11,8 @@ class RecentArticles extends React.Component {
         super(props, context);
         const NUM_MAX = 5;
 
-        this.posts = this.props.posts.length > NUM_MAX ? this.props.posts.reverse().slice(0,5) : this.props.posts;
+        const posts = this.props.posts.length > NUM_MAX ? this.props.posts.slice(0,5) : this.props.posts;
+        this.metaData = posts.map(post => post.metaData);
     }
 
 
@@ -21,7 +22,7 @@ class RecentArticles extends React.Component {
                 <h5 className="sidebar-module-title">Articulos Recientes</h5>
                 <hr/>
                 <div>
-                  {this.posts.map((post) => {
+                  {this.metaData.map((post) => {
                       return(
                         <div key={post.title} className="link-recent-articles">
                           <Link to={post.path}>{post.title}</Link>
