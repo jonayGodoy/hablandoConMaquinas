@@ -1,5 +1,3 @@
-
-//import 'jsdom-global/register';
 import React from 'react';
 import { shallow } from 'enzyme';
 import RecentArticle from './RecentArticles';

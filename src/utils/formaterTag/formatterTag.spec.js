@@ -1,4 +1,4 @@
-/*
+
 import {TAGS_CONST} from "./formatterTags"
 import formatter from "./formatterTags"
 
@@ -36,15 +36,15 @@ describe("Formatter Tag",() =>{
 
         let tags = formatter.format(rawTags);
 
-        expect(tags).to.deep.equal(["Eventos"]);
+        expect(tags).toContain("Eventos");
     });
 
     it("throw exception when tags not exit", () => {
         let rawTags = "eventas";
 
-        let rawFunction = () => {formatter.format(rawTags)}
+        let rawFunction = () => {formatter.format(rawTags)};
 
-        expect(rawFunction).to.throw("tag \'eventas\' does not exist in const list");
+        expect(rawFunction).toThrow("tag \'eventas\' does not exist in const list");
     });
 
     function expectDeepEqualsIgnoreCase(parameters){
@@ -53,8 +53,8 @@ describe("Formatter Tag",() =>{
         for(let key in sut) {
             sut[key] = sut[key].toLowerCase();
         }
-        expect(sut).to.deep.equal(parameters.expect);
+       expect(sut).toEqual(parameters.expect);
     }
 });
 
-*/
+
