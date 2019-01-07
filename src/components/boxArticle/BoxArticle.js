@@ -17,7 +17,7 @@ class BoxArticles extends React.Component {
   render () {
     const metaData = this.props.post.metaData;
     const date = moment(metaData.date);
-    moment.locale('es')
+    moment.locale('es');
     return(
         <section className="blog-card">
             <div className="photo-details">

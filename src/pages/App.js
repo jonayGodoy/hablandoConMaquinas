@@ -37,10 +37,13 @@ class App extends React.Component {
     function mountArticlePages(markdownReactPages){
       //todo: usar tu propio componente en lugar del markdown de la libreiria
       return markdownReactPages.map(
-        (articlePage,index) => <Route key={index}
-                                      path={markdownPagesModel.pages[index].path}
-                                      render = {mountIntoTemplate(articlePage)}/>
+        (articlePage,index) => buildRoute(articlePage,index)
         );
+      function buildRoute(articlePage,index){
+        return (<Route key={index}
+                      path={markdownPagesModel.pages[index].metaData.path}
+                      render = {mountIntoTemplate(articlePage)}/>);
+      }
     }
   }
 }
