@@ -27,8 +27,8 @@ function FormatterTags() {
         format: proxyFormat
     };
 }
-
-export const TAGS_CONST = Object.freeze({
+//Object.freeze no se porqque de momento no funciona con tags_Const
+export const TAGS_CONST = {
     events : "eventos",
     git : "git",
     books : "libros",
@@ -39,6 +39,6 @@ export const TAGS_CONST = Object.freeze({
     katas : "katas",
     "3D" : "3d",
     post_mortem : "post-mortem"
-});
+};
 
 export default FormatterTags();

@@ -1,6 +1,6 @@
 import Markdown from 'markdown-to-jsx';
 import Image from '../../components/markdownComponents/image/Image';
-import React, {Component} from 'react';
+import React from 'react';
 
 import ArticleTemplate from '../../components/articleTemplate/ArticleTemplate';
 
