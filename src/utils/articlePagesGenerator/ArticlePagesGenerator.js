@@ -1,4 +1,5 @@
 import Markdown from 'markdown-to-jsx';
+import Image from '../../components/markdownComponents/image/Image';
 import React, {Component} from 'react';
 
 import ArticleTemplate from '../../components/articleTemplate/ArticleTemplate';
@@ -111,27 +112,6 @@ export default function ArticlePagesGenerator() {
 
   return {
     generate: generate
-  }
-}
-
-
-class Image extends Component {
-  constructor(props, context) {
-    super(props, context);
-  }
-
-  /*todo: extrar el componente imgae a un estilo y a js*/
-  render() {
-    return (<div>
-      <img src={"../"+this.props.src}
-           style={{
-             display: 'block',
-             margin: '0 auto',
-             width: '100%',
-             maxWidth: '800px',
-             height: 'auto'
-           }}/>
-    </div>)
   }
 }
 
