@@ -1,6 +1,5 @@
 
 import React from 'react';
-import config from "../../config-blog";
 import cv from "./cvDTO";
 import formatted from "./convert/formatterToMilestone"
 

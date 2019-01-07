@@ -1,5 +1,6 @@
 import React from 'react';
 import config from "../../config-blog";
+import PropTypes from 'prop-types';
 
 import DisqusComments  from 'react-disqus-comments';
 
@@ -30,4 +31,10 @@ class ArticleTemplate extends React.Component {
 
     }
 }
+
+ArticleTemplate.propTypes = {
+  post: PropTypes.object.isRequired,
+  children: PropTypes.object.isRequired
+};
+
 export default ArticleTemplate

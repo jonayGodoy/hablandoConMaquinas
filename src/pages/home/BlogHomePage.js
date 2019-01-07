@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import PropTypes from 'prop-types';
 import BoxArticle from '../../components/boxArticle/BoxArticle';
 import './index.css';
 
@@ -33,5 +33,9 @@ class BlogHomePage extends Component {
         </div>);
     }
 }
+
+BlogHomePage.propTypes = {
+  pages: PropTypes.array.isRequired
+};
 export default BlogHomePage
 

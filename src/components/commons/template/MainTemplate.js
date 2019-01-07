@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import MenuNav from '../menuNav/MenuNav';
 import MenuMobile from '../menuMobile/MenuMobile';
 
@@ -46,4 +46,8 @@ class MainTemplate extends React.Component {
         )
     }
 }
+MainTemplate.propTypes = {
+  children: PropTypes.object.isRequired
+};
+
 export default MainTemplate;

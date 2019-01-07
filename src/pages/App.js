@@ -29,10 +29,7 @@ class App extends React.Component {
     );
 
     function mountIntoTemplate(children){
-      return () => <MainTemplate
-        children={children}
-        pages = {markdownPagesModel.pages}
-        />
+      return () => <MainTemplate pages={markdownPagesModel.pages}>{children}</MainTemplate>
     }
     function mountArticlePages(markdownReactPages){
       //todo: usar tu propio componente en lugar del markdown de la libreiria

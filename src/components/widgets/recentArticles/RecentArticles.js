@@ -1,9 +1,8 @@
-
 import React from 'react';
+import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';
 import "./recent-articles.css"
-import './sidebar.css'
-
+import './sidebar.css';
 
 class RecentArticles extends React.Component {
 
@@ -34,7 +33,9 @@ class RecentArticles extends React.Component {
         )
     }
 }
-
+RecentArticles.propTypes = {
+  posts: PropTypes.array.isRequired
+};
 
 export default RecentArticles;
 

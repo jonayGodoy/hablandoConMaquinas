@@ -1,5 +1,6 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import * as routesPath from "../../pages/routePath";
 import formattedTag from "../../utils/formaterTag/formatterTags";
@@ -57,6 +58,9 @@ class BoxArticles extends React.Component {
     );
   }
 }
+BoxArticles.propTypes = {
+  post: PropTypes.object.isRequired
+};
 
 export default BoxArticles;
 
