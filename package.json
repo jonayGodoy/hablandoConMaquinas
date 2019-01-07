@@ -20,6 +20,7 @@
     "remove-dist": "rimraf ./dist",
     "prebuild": "npm run lint && npm run test && npm run clean-dist",
     "build": "babel-node tools/build.js && npm run open:dist",
+    "build:server": "babel-node tools/build.js",
     "deploy": "npm run build && npm run deploy:fast",
     "deploy:fast": "gh-pages -d dist",
     "test": "jest",
