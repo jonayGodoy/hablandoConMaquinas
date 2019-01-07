@@ -1,5 +1,4 @@
 /*
-import { expect } from "chai";
 import {TAGS_CONST} from "./formatterTags"
 import formatter from "./formatterTags"
 
@@ -57,4 +56,5 @@ describe("Formatter Tag",() =>{
         expect(sut).to.deep.equal(parameters.expect);
     }
 });
+
 */
